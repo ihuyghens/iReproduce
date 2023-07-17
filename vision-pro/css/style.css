@@ -461,10 +461,14 @@ main>.section-human-animation {
     vertical-align: bottom;
 }
 .section-human-animation .images-wrapper {
-    opacity: 0.001;
+    /* opacity: 0.001; */
+    background-color: #000;
 }
 .images-wrapper {
     /* width: 100%; */
+}
+.images-wrapper #hardware{
+    
 }
 .images-wrapper img{
     width: 100%;

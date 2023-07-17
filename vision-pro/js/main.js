@@ -54,7 +54,10 @@ cancelBtn.addEventListener("click", () => {
 window.addEventListener("scroll", function () {
     let movie = document.getElementById("section-movie");
     let message = document.getElementById("vision-pro-text");
+    let hardware = document.getElementById('hardware');
+    let hardwareHuman = document.getElementById('hardware-human');
     let scrollTop = document.documentElement.scrollTop;
+
     // movie.style.opacity = 1 - scrollTop / 500;
     message.style.opacity = 0 + scrollTop / 700;
     movie.style.transform = "matrix(" + 1 + "," + 0 + "," + 0 + "," + 1 + "," + 0 + ", -" + scrollTop + ")";
@@ -63,6 +66,12 @@ window.addEventListener("scroll", function () {
         movie.classList.add('hidden');
         // message.style.opacity = 1;
         // message.style.transform = "matrix(" + 1 + "," + 0 + "," + 0 + "," + 1 + "," + 0 + ", -" + scrollTop + ")";
+        if(message.style.opacity >= 1.1) {
+            hardware.style.opacity = (scrollTop - 2) / 700;
+            message.classList.add('hidden');
+        } else {
+            message.classList.remove('hidden');
+        }
     } else {
         movie.classList.remove('hidden')
     }
