@@ -58,14 +58,18 @@ window.addEventListener("scroll", function () {
     let hardwareHuman = document.getElementById('hardware-human');
     let scrollTop = document.documentElement.scrollTop;
 
-    // movie.style.opacity = 1 - scrollTop / 500;
     message.style.opacity = 0 + scrollTop / 700;
     movie.style.transform = "matrix(" + 1 + "," + 0 + "," + 0 + "," + 1 + "," + 0 + ", -" + scrollTop + ")";
+    movie.style.opacity = 1;
+    // movie.style.opacity = 1 - scrollTop / 500;
     
-    if(message.style.opacity >= 0.5) {
+    if(message.style.opacity >= 0.3) {
+        movie.style.transform = "matrix(" + 1 + "," + 0 + "," + 0 + "," + 1 + "," + 0 + ", -" + scrollTop + ")";
         movie.classList.add('hidden');
+
+        message.style.transform = "matrix(" + 1 + "," + 0 + "," + 0 + "," + 1 + "," + 0 + ", -" + scrollTop + ")";
         // message.style.opacity = 1;
-        // message.style.transform = "matrix(" + 1 + "," + 0 + "," + 0 + "," + 1 + "," + 0 + ", -" + scrollTop + ")";
+
         if(message.style.opacity >= 1.1) {
             hardware.style.opacity = (scrollTop - 2) / 700;
             message.classList.add('hidden');
